@@ -1,0 +1,40 @@
+.project-modal { position: fixed; inset: 0; width: min(1180px, calc(100% - 64px)); max-width: none; max-height: min(850px, calc(100dvh - 64px)); margin: auto; padding: 0; overflow: auto; color: var(--text); border: 1px solid #ffffff24; border-radius: 16px; background: #141414f5; box-shadow: 0 40px 160px #000b, inset 0 1px 0 #ffffff0c; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: #555 #141414; }
+.project-modal::backdrop { background: #000b; backdrop-filter: blur(5px); animation: backdrop-in .3s ease both; }
+.project-modal.is-closing::backdrop { animation: backdrop-out .18s ease both; }
+.modal-shell { display: grid; grid-template-columns: 57% 43%; position: relative; min-width: 0; }
+.modal-close { position: absolute; z-index: 3; right: 18px; top: 18px; width: 40px; height: 40px; background: #242424e6; backdrop-filter: blur(8px); }
+.modal-media-column { display: flex; flex-direction: column; justify-content: center; min-width: 0; padding: 28px; border-right: 1px solid var(--border); background: #0b0b0b80; }
+.modal-media { position: relative; aspect-ratio: 16 / 9; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; background: #0b0b0b; }
+.modal-media video { display: block; width: 100%; height: 100%; object-fit: contain; }
+.modal-still { position: relative; width: 100%; height: 100%; }
+.modal-still img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.video-placeholder { position: relative; width: 100%; height: 100%; }
+.video-placeholder .project-art { opacity: .4; }
+.video-placeholder-copy { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 16px; background: #08080850; }
+.placeholder-play { display: grid; place-items: center; width: 58px; height: 58px; padding-left: 3px; border: 1px solid #ffffff30; border-radius: 50%; background: #ffffff08; }
+.video-placeholder-copy p { font-size: clamp(13px, 1.4vw, 17px); margin: 18px 0 8px; }
+.video-placeholder-copy .mono { font-size: 8px; letter-spacing: .13em; color: #aaa; }
+.manual-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); white-space: nowrap; background: #202020; border: 1px solid #ffffff30; }
+.modal-details { min-width: 0; padding: 66px 32px 32px; }
+.modal-eyebrow { display: flex; justify-content: space-between; gap: 12px; font-size: 9px; text-transform: uppercase; letter-spacing: .09em; color: #aaa; }
+.modal-details h2 { font-size: clamp(28px, 3.2vw, 44px); letter-spacing: -.055em; font-weight: 500; line-height: 1.2; margin: 16px 0; }
+.modal-status { display: inline-flex; align-items: center; gap: 7px; font-size: 10px; color: #bdbdbd; padding: 6px 9px; border: 1px solid var(--border); border-radius: 3px; }
+.modal-description { color: #aaa; font-size: 12px; line-height: 1.9; margin: 22px 0 26px; }
+.modal-features h3 { font-size: 9px; font-weight: 400; letter-spacing: .13em; color: #aaa; margin-bottom: 14px; }
+.modal-features ul { list-style: none; padding: 0; display: grid; gap: 11px; }
+.modal-features li { display: flex; align-items: baseline; gap: 10px; font-size: 11px; line-height: 1.6; color: #d0d0d0; }
+.modal-features li span { color: #888; }
+.project-facts { display: grid; gap: 16px; margin: 25px 0; padding-top: 23px; border-top: 1px solid var(--border); }
+.project-facts > div { display: grid; grid-template-columns: 1fr 1.2fr; gap: 12px; }
+.project-facts dt { font-family: var(--mono); font-size: 8px; letter-spacing: .06em; color: #a3a3a3; padding-top: 2px; }
+.project-facts dd { font-size: 11px; color: #d5d5d5; }
+.modal-cta { display: grid; gap: 14px; }
+.modal-cta .button { width: 100%; font-size: 11px; justify-content: space-between; }
+.disabled-build { background: #242424; color: #aaa; cursor: not-allowed; border: 1px solid #ffffff12; }
+.source-link { justify-content: center; font-size: 11px; }
+@keyframes backdrop-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes backdrop-out { from { opacity: 1; } to { opacity: 0; } }
+@media (min-width: 1500px) { .modal-details { padding: 68px 38px 38px; } .modal-description, .modal-features li { font-size: 13px; } }
+@media (max-width: 900px) { .project-modal { width: min(700px, calc(100% - 40px)); } .modal-shell { grid-template-columns: 1fr; } .modal-media-column { border-right: 0; border-bottom: 1px solid var(--border); padding: 24px; } .modal-media { margin-top: 36px; } .modal-details { padding: 28px; } .modal-description, .modal-features li { font-size: 13px; } .modal-eyebrow { font-size: 10px; } .modal-details h2 { font-size: 38px; } .project-facts dt { font-size: 9px; } .project-facts dd { font-size: 12px; } .video-placeholder-copy p { font-size: 17px; } }
+@media (max-width: 480px) { .project-modal { width: calc(100% - 24px); max-height: calc(100dvh - 24px); border-radius: 10px; } .modal-close { top: 10px; right: 10px; } .modal-media-column { padding: 12px 12px 17px; } .modal-media { margin-top: 43px; } .modal-details { padding: 24px 20px; } .modal-details h2 { font-size: 32px; } .modal-description { font-size: 12px; } .modal-features li { font-size: 12px; } .placeholder-play { width: 40px; height: 40px; } .video-placeholder-copy p { font-size: 12px; margin: 10px 0 6px; } .video-placeholder-copy .mono { font-size: 6px; } .project-facts > div { grid-template-columns: 1fr 1fr; } }
+@media (prefers-reduced-motion: reduce) { .project-modal::backdrop, .project-modal.is-closing::backdrop { animation: none; } }
