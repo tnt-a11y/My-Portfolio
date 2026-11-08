@@ -23,6 +23,8 @@ export default function App() {
   useEffect(() => {
     const canonical = safeExternalUrl(site.canonicalUrl)
     if (!canonical) return
+    // Production metadata is in the HTML so crawlers do not need JavaScript.
+    if (document.querySelector('link[rel="canonical"]')) return
     const link = document.createElement('link')
     link.rel = 'canonical'
     link.href = canonical

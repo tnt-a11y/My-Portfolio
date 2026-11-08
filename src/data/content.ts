@@ -48,8 +48,7 @@ export const site = {
   linkedin: 'https://www.linkedin.com/in/tahmid-nasif-tamal-34baa5446' as string | null,
   itch: 'https://trinitrointeractive.itch.io' as string | null,
   professionalLinks: [] as { label: string; url: string }[],
-  // Set your public HTTPS origin after choosing a domain. No fictional canonical is emitted.
-  canonicalUrl: null as string | null,
+  canonicalUrl: 'https://tahmid-nasif-tamal.pages.dev/' as string | null,
 }
 
 export const services = [

@@ -122,13 +122,13 @@ The suite starts Vite automatically unless a server is already listening. It che
 
 ## Deploy
 
-This repository is ready for static hosting; it has not been published to an external host.
+Production website: **https://tahmid-nasif-tamal.pages.dev/**
 
-- **Vercel:** import the repository, choose Vite, build with `pnpm build`, output `dist`.
-- **Netlify:** import the repository, build with `pnpm build`, publish `dist` (or drag the built `dist` folder to a manual deployment).
-- **GitHub Pages:** run `VITE_BASE_PATH=/YOUR-REPOSITORY/ pnpm build` in your CI job and publish `dist` with the official Pages upload/deploy actions. On PowerShell use `$env:VITE_BASE_PATH='/YOUR-REPOSITORY/'` before `pnpm build`. For a user/custom-domain root site, keep `/`.
+Source repository: **https://github.com/tnt-a11y/My-Portfolio**
 
-No routing rewrites are needed: navigation uses native section anchors and project details are dialogs. Configure your actual domain in `site.canonicalUrl`; canonical and Open Graph URL metadata will then be emitted. Update `index.html` if changing title/description. `public/og-image.png` is the supplied 1200 × 630 social image, with an editable source at `public/og-image.svg`. For social crawlers that do not execute JavaScript, set the absolute public `og:image` URL and canonical directly in `index.html` after choosing your domain. The favicon works as provided.
+Cloudflare Pages hosts the built `dist` directory through Direct Upload. The production hostname is permanent; it does not depend on a local preview or tunnel. Source pushes and production deployments are separate operations. See [deployment instructions](docs/deployment.md) for updates to the existing project.
+
+No routing rewrites are needed: navigation uses native section anchors and project details are dialogs. Canonical, Open Graph, robots, and sitemap metadata use the production domain. `public/og-image.png` is the 1200 × 630 social image, with an editable source at `public/og-image.svg`.
 
 Performance is supported by local Latin font subsets, reserved media ratios, a separately loaded modal/CSS chunk, no initial gameplay requests, and bounded pointer effects. Core Web Vitals and Lighthouse targets are not guarantees: measure your deployed domain with its final media on realistic devices/network conditions. The footer year updates automatically.
 

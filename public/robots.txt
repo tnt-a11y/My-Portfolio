@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://tahmid-nasif-tamal.pages.dev/sitemap.xml
