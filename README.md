@@ -122,11 +122,11 @@ The suite starts Vite automatically unless a server is already listening. It che
 
 ## Deploy
 
-Production website: **https://tahmid-nasif-tamal.pages.dev/**
+Production website: **https://tnt-a11y.github.io/My-Portfolio/**
 
 Source repository: **https://github.com/tnt-a11y/My-Portfolio**
 
-Cloudflare Pages hosts the built `dist` directory through Direct Upload. The production hostname is permanent; it does not depend on a local preview or tunnel. Source pushes and production deployments are separate operations. See [deployment instructions](docs/deployment.md) for updates to the existing project.
+GitHub Pages publishes the Vite production build automatically whenever changes reach `main`. The workflow builds with the repository subpath so photos, fonts, game links, and other assets resolve correctly. See [deployment instructions](docs/deployment.md) for details.
 
 No routing rewrites are needed: navigation uses native section anchors and project details are dialogs. Canonical, Open Graph, robots, and sitemap metadata use the production domain. `public/og-image.png` is the 1200 × 630 social image, with an editable source at `public/og-image.svg`.
 

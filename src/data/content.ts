@@ -48,7 +48,7 @@ export const site = {
   linkedin: 'https://www.linkedin.com/in/tahmid-nasif-tamal-34baa5446' as string | null,
   itch: 'https://trinitrointeractive.itch.io' as string | null,
   professionalLinks: [] as { label: string; url: string }[],
-  canonicalUrl: 'https://tahmid-nasif-tamal.pages.dev/' as string | null,
+  canonicalUrl: 'https://tnt-a11y.github.io/My-Portfolio/' as string | null,
 }
 
 export const services = [

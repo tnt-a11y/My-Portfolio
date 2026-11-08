@@ -1,14 +1,14 @@
 # Production deployment
 
-- Website: https://tahmid-nasif-tamal.pages.dev/
-- GitHub: https://github.com/tnt-a11y/My-Portfolio
-- Cloudflare Pages project: `tahmid-nasif-tamal`
+- Website: <https://tnt-a11y.github.io/My-Portfolio/>
+- Source: <https://github.com/tnt-a11y/My-Portfolio>
 - Production branch: `main`
+- Workflow: `.github/workflows/pages.yml`
 - Build command: `pnpm build`
 - Build output: `dist`
 
-The project uses Cloudflare Pages Direct Upload. The Pages hostname is permanent and serves the production deployment independently of this computer. GitHub stores the source; pushes do not automatically deploy with this setup.
+GitHub Actions builds the site with `VITE_BASE_PATH=/My-Portfolio/`, uploads the Vite `dist` artifact, and publishes it through GitHub Pages whenever a commit reaches `main`. The workflow can also be started manually from the repository’s Actions tab.
 
-For an update, build the committed source, then upload the contents of `dist` to a new **Production** deployment in the existing Pages project. Alternatively, after signing in to Wrangler, run `pnpm dlx wrangler pages deploy dist --project-name tahmid-nasif-tamal --branch main`.
+For updates, push changes to `main`. To review a deployment, open the repository’s Actions tab and check the latest **Publish portfolio** run. The production URL is under **Settings → Pages** after the first successful deploy.
 
-The domain appears in `index.html`, `src/data/content.ts`, `public/robots.txt`, and `public/sitemap.xml`. Update those together if moving to a custom domain. Cloudflare credentials stay outside this repository.
+The canonical, Open Graph, robots, and sitemap URLs use the GitHub Pages production URL. If the repository name or site domain changes, update those URLs and the `VITE_BASE_PATH` value in the workflow together.
